@@ -16,9 +16,9 @@ public class Persona {
 	@Column
 	private String ape;
 	@Column
-	private String Cedula;
+	private String cedula;
 	@Column
-	private String Celular;
+	private String celular;
 	
 	
 	public Long getId() {
@@ -40,16 +40,19 @@ public class Persona {
 		this.ape = ape;
 	}
 	public String getCedula() {
-		return Cedula;
+		return cedula;
 	}
 	public void setCedula(String cedula) {
-		Cedula = cedula;
+		this.cedula = cedula;
 	}
 	public String getCelular() {
-		return Celular;
+		return celular;
 	}
 	public void setCelular(String celular) {
-		Celular = celular;
+		this.celular = celular;
+	}
+	public String toString() {
+		return "Customer [id=" + this.id + ", name=" + this.name + ", ape=" + this.ape + ", cedula=" + this.cedula + ", celular=" + this.celular + "]";
 	}
 	
 
