@@ -23,7 +23,7 @@ public class PersonaServiceImp implements PersonaService {
 	}
 	
 	@Override
-	public Persona getById(Long id) {
+	public Persona getById(long id) {
       return repositorio.findById(id).get();
 	}
 
@@ -33,10 +33,11 @@ public class PersonaServiceImp implements PersonaService {
 	}
 
 	@Override
-	public Persona delete(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Persona delete(long id) {
+		Persona p = repositorio.findById(id).get();
+		if(p!=null) {
+			repositorio.delete(p);
+		}
+		return p;
 	}
-
-
 }
