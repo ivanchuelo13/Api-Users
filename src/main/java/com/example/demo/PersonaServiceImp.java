@@ -13,24 +13,23 @@ public class PersonaServiceImp implements PersonaService {
 	private PersonaRepositorio repositorio;
 	
 	@Override
-	public List<Persona> listar() {
+	public List<Persona> getAllList() {
 		return repositorio.findAll();
 	}
 	
 	@Override
-	public Persona listarId(int id) {
-		return null;
-	}
-
-	@Override
 	public Persona add(Persona p) {
 		return repositorio.save(p);	
 	}
+	
+	@Override
+	public Persona getById(Long id) {
+      return repositorio.findById(id).get();
+	}
 
 	@Override
-	public Persona edit(Persona u) {
-		// TODO Auto-generated method stub
-		return null;
+	public Persona edit(Persona p) {
+		return repositorio.save(p);
 	}
 
 	@Override
@@ -38,5 +37,6 @@ public class PersonaServiceImp implements PersonaService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 
 }
